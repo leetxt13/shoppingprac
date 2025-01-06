@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinates</title>
+    <style>
+      body {
+        display: flex;
+        flex-flow: column;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        margin: 20px 0rem;
+        display: inline-block;
+      }
+      .special {
+        background-color: brown;
+      }
+      .btn_box {
+        position: fixed;
+        right: 2rem;
+        top: 1rem;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        border: none;
+      }
+      .btn {
+        height: 3rem;
+        width: max-content;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="btn_box">
+      <button class="scrollBy btn">scroll by 100px(y)</button>
+      <button class="scrollTo btn">scroll to 100px(y)</button>
+      <button class="scrollInto btn">scroll into special</button>
+    </div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="special"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+      const special = document.querySelector('.special');
+      const scrollInto = document.querySelector('.scrollInto');
+      const scrollBy = document.querySelector('.scrollBy');
+      const scrollTo = document.querySelector('.scrollTo');
+      const btn_box = document.querySelector('.btn_box');
+      btn_box.addEventListener('click', (e) => {
+        if (e.target.className == 'scrollBy btn') {
+          window.scrollBy({ top: 100, behavior: 'smooth' });
+        } else if (e.target.className == 'scrollTo btn') {
+          window.scrollTo(0, 100);
+        } else if (e.target.className == 'scrollInto btn') {
+          special.scrollIntoView();
+        }
+      });
+      special.addEventListener('click', (e) => {
+        console.log(e);
+        const boundingClientRectHeight = special.getBoundingClientRect().height;
+        const boundingClientRectWidth = special.getBoundingClientRect().width;
+        const clientX = e.clientX;
+        const clientY = e.clientY;
+        const pageX = e.pageX;
+        const pageY = e.pageY;
+        special.innerHTML = `
+        boundingClientRect : ${boundingClientRectHeight}, ${boundingClientRectWidth} <br/>
+        client : ${clientX}, ${clientY} <br/>
+        page : ${pageX}, ${pageY}`;
+      });
+    </script>
+  </body>
+</html>

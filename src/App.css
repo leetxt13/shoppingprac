@@ -6,6 +6,82 @@
   height: 40vmin;
   pointer-events: none;
 }
+.profile {
+  position: relative;
+  width: 300px;
+  text-align: center;
+  padding: 1rem;
+  background-color: #ebebeb;
+  border-radius: 20px;
+  box-shadow: 17px 18px 27px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 17px 18px 27px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 17px 18px 27px -7px rgba(0, 0, 0, 0.75);
+  margin-bottom: 1rem;
+}
+.photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+}
+.avatar {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: auto;
+}
+.new {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  background-color: cornflowerblue;
+  text-transform: uppercase;
+  padding: 0.2rem 0.2rem;
+  border-radius: 0.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  flex-flow: column;
+  align-items: center;
+}
+.banner {
+  background-color: rgba(16, 230, 237, 0.213);
+  /* display: inline-block; */
+  width: 20rem;
+  height: 3rem;
+  margin-top: 2rem;
+  text-align: center;
+
+  font-size: 2rem;
+}
+.counter:hover {
+  background-color: #9acd32;
+}
+.counter {
+  display: flex;
+  flex-flow: column;
+  border: 1px solid red;
+  align-items: center;
+  /* padding: 1rem 8rem; */
+  margin-top: 2rem;
+  transition: all 100ms ease-in-out;
+  width: 25rem;
+  height: 15rem;
+}
+.number {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+.button {
+  font-size: 2rem;
+  background-color: burlywood;
+  border-radius: 0.5rem;
+}
+.button:nth-child(3) {
+  margin-top: 1rem;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
